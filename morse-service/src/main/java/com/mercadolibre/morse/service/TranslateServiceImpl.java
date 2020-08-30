@@ -54,7 +54,7 @@ public class TranslateServiceImpl implements TranslateService {
 	}
 
 	@Override
-	public String translate2Human(String morse) {
+	public String translate2Human(String morse) throws Exception{
 		String[] arrayMorse = morse.split("\\s");
 		String text = "";
 
@@ -70,7 +70,7 @@ public class TranslateServiceImpl implements TranslateService {
 	}
 
 	@Override
-	public String translate2Morse(String text) {
+	public String translate2Morse(String text) throws Exception{
 		String[] arrayMorse = text.toUpperCase().split("");
 		String morse = "";
 

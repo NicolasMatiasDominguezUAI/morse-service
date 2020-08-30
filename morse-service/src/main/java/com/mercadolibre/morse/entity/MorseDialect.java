@@ -15,7 +15,8 @@ public class MorseDialect {
 
 	private static final String COD_MORSE[] = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---",
 			"-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--",
-			"--..", "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.",FULLSTOP,"" };
+			"--..", "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", FULLSTOP,
+			"" };
 
 	static {
 		for (int i = 0; i < COD_MORSE.length; i++) {
@@ -24,11 +25,19 @@ public class MorseDialect {
 		}
 	}
 
-	public static String caracterToMorse(String caracter) {
-		return CARACTER.get(caracter);
+	public static String caracterToMorse(String caracter) throws Exception {
+		if (CARACTER.containsKey(caracter)) {
+			return CARACTER.get(caracter);
+		} else {
+			throw new Exception("El caracter '" + caracter + "' no pertenece al dialecto morse");
+		}
 	}
 
-	public static String morseToCaracter(String morse) {
-		return MORSE.get(morse);
+	public static String morseToCaracter(String morse) throws Exception {
+		if (MORSE.containsKey(morse)) {
+			return MORSE.get(morse);
+		} else {
+			throw new Exception("El codigo morse '" + morse + "' no pertenece al dialecto");
+		}
 	}
 }

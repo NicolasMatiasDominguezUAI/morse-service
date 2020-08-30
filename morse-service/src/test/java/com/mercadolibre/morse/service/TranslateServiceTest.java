@@ -73,7 +73,7 @@ public class TranslateServiceTest {
 
 	
 	@Test
-	public void whenInputMorse_ThenTextHuman() {
+	public void whenInputMorse_ThenTextHuman() throws Exception{
 		String morse = ".... --- .-.. .-  -- . .-.. ..";
 
 		String textHuman = translateService.translate2Human(morse);
@@ -83,7 +83,7 @@ public class TranslateServiceTest {
 	}
 	
 	@Test
-	public void whenInputTextHuman_ThenMorse() {
+	public void whenInputTextHuman_ThenMorse() throws Exception{
 		String text = "HOLA MELI";
 
 		String morse = translateService.translate2Morse(text);
