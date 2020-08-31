@@ -1,5 +1,11 @@
 package com.mercadolibre.morse.entity;
 
-public interface Signal {
-	String getCode();
+public abstract class Signal {
+	
+	public String code;
+
+	public String getCode() {
+		return code;
+	}
+	
 }

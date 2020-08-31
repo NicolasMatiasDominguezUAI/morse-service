@@ -5,9 +5,12 @@ import java.util.stream.Collectors;
 
 public class Morse {
 
-	public Morse() {
+	private List<Signal> listSignals;
+	
+	public Morse(List<Signal> listSignals) {
+		this.listSignals = listSignals;
 	}
-
+	
 	public Morse(String codMorse) {
 		String[] arrayCodMorse = codMorse.split("");
 
@@ -22,8 +25,6 @@ public class Morse {
 				listSignals.add(null);
 		}
 	}
-
-	private List<Signal> listSignals;
 
 	public List<Signal> getListSignals() {
 		return listSignals;

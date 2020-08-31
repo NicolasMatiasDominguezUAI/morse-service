@@ -18,7 +18,6 @@ public class TranslateServiceImpl implements TranslateService {
 	@Override
 	public String decodeBits2Morse(boolean[] binaryArray) {
 		List<Signal> listSiganls = new ArrayList<>();
-		Morse morse = new Morse();
 
 		int lengthDit = Dit.LENGTH; // length dit
 		int lengthDah = Dah.LENGTH; // length dah
@@ -48,7 +47,7 @@ public class TranslateServiceImpl implements TranslateService {
 					listSiganls.add(new Pause()); // SPACE
 			}
 		}
-		morse.setListSignals(listSiganls);
+		Morse morse = new Morse(listSiganls);
 
 		return morse.toString();
 	}
